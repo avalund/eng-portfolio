@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Ava Lund</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+<header>
+  <div class="brand">
+    <a class="brand-link" href="{{ url_for('index') }}" style="text-decoration:none;color:inherit">Ava Lund</a>
+  </div>
+
+  <nav aria-label="Primary" class="nav--capsule">
+    <!-- Projects with dropdown -->
+    <div class="nav-item">
+      <a class="nav-link" href="{{ url_for('index') }}#projects" aria-haspopup="true" aria-expanded="false">
+        Projects <span class="chev" aria-hidden="true">▾</span>
+      </a>
+      <div class="dropdown" role="menu" aria-label="Projects">
+        {% for p in projects %}
+          <a class="drop-link" href="{{ url_for('project', slug=p.slug) }}" role="menuitem">
+            {{ p.title }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+  </nav>
+</header>
+
+
+    <section class="hero" aria-labelledby="contact">
+      <div class="kicker">Contact</div>
+      <h1 id="contact">Let’s talk.</h1>
+      <p class="sub">Feel free to send an email or message me on LinkedIn if you want to talk!</p>
+    </section>
+<section class="grid">
+  <article class="card no-lift contact-card" style="grid-column: span 12;">
+    <div class="contact-grid">
+      <!-- Portrait -->
+      <figure class="contact-photo">
+        <img loading="lazy"
+             src="{{ url_for('static', filename='img/contact-page/01-headshot.jpg') }}"
+             alt="Photo of Ava Lund">
+      </figure>
+
+      <!-- Text -->
+
+<div class="content">
+  <h3 class="title">Contact</h3>
+<p class="desc" style="margin:.4rem 0;">
+  Email: <a class="link" href="mailto:arlund2005@gmail.com">arlund2005@gmail.com</a><br>
+  LinkedIn: <a class="link" href="https://www.linkedin.com/in/ava-lund" target="_blank" rel="noopener">linkedin.com/in/ava-lund</a><br>
+  GitHub: <a class="link" href="https://github.com/avalund" target="_blank" rel="noopener">github.com/avalund</a>
+</p>
+
+
+
+
+
+      </div>
+    </div>
+  </article>
+</section>
+
+
+    <footer>
+      <span>© <span id="y"></span> Ava Lund</span>
+      <span><a href="{{ url_for('index') }}#projects" class="link">← Back to Projects</a></span>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
