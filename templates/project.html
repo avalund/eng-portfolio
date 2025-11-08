@@ -72,78 +72,78 @@
     
     </section>
 
-    {% if p.slug == 'cat-speaker' %}
-    <!-- Description / Specs -->
-    <section class="section">
-      <div class="cols">
-          <div class="content">
-            <h3 class="title">Overview</h3>
-            <p class="lead">
-                Cat-shaped Bluetooth speaker focused on compact, clean packaging and basic consumer-electronics design. Enclosure modeled in Siemens NX and 3D-printed with tuned wall thickness for acoustic rigidity.
-            </p>
-            <p class="desc">
-  Electronics: single-cell Li-ion with TP4056 charging, PAM8403 class-D stereo amp, CA-6928 Bluetooth receiver, and a panel potentiometer for volume. Emphasized enclosure layout and wiring consideration.
-            </p>
-          </div>
-        </article>
+   {% if p.slug == 'cat-speaker' %}
+  <!-- ===== BLUETOOTH SPEAKER (CAT) ===== -->
 
-        <div class="card">
-          <div class="content">
-            <h3 class="title">Parts & Specs</h3>
-            <dl class="specs">
-              <dt>Enclosure</dt><dd>Siemens NX, 3D-printed (PLA)</dd>
-              <dt>Receiver</dt><dd>CA-6928, Bluetooth module</dd>
-              <dt>Amplifier</dt><dd>PAM8403, 2×3 W class-D</dd>
-              <dt>Power</dt><dd>TP4056 charger + 3.7 volt LiPo battery, E-switch</dd>
-              <dt>Speaker</dt><dd>3–4″ car replacement driver</dd>
-              <dt>Controls</dt><dd>Power: E-switch, Volume: potentiometer</dd>
-            </dl>
-          </div>
+  <!-- Description / Specs -->
+  <section class="section">
+    <div class="cols cols--equal">
+      <!-- Overview -->
+      <article class="card no-lift">
+        <div class="content">
+          <h3 class="title">Overview</h3>
+          <p class="lead">
+            Cat-shaped Bluetooth speaker focused on compact, clean packaging and basic consumer-electronics design.
+            Enclosure modeled in Siemens NX and 3D-printed with tuned wall thickness for acoustic rigidity.
+          </p>
+          <p class="desc">
+            Electronics: single-cell Li-ion with TP4056 charging, PAM8403 class-D stereo amp, CA-6928 Bluetooth receiver,
+            and a panel potentiometer for volume. Emphasized enclosure layout and wiring consideration.
+          </p>
+        </div>
+      </article>
+
+      <!-- Parts & Specs -->
+      <div class="card no-lift">
+        <div class="content">
+          <h3 class="title">Parts & Specs</h3>
+          <dl class="specs">
+            <dt>Enclosure</dt><dd>Siemens NX, 3D-printed (PLA)</dd>
+            <dt>Receiver</dt><dd>CA-6928, Bluetooth module</dd>
+            <dt>Amplifier</dt><dd>PAM8403, 2×3 W class-D</dd>
+            <dt>Power</dt><dd>TP4056 charger + 3.7 V Li-ion battery, E-switch</dd>
+            <dt>Speaker</dt><dd>3–4″ car replacement driver</dd>
+            <dt>Controls</dt><dd>Power: E-switch, Volume: potentiometer</dd>
+          </dl>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-<!-- SINGLE, CENTERED COVER IMAGE -->
-<figure class="centerpiece" aria-label="Main photo">
-  <img src="{{ url_for('static', filename='img/' ~ p.image) }}" alt="{{ p.title }} — main image">
-</figure>
+  <!-- Centered cover image -->
+  <figure class="centerpiece" aria-label="Main photo">
+    <img src="{{ url_for('static', filename='img/' ~ p.image) }}" alt="{{ p.title }} — main image">
+  </figure>
 
-    
-<!-- VIDEO PLAY BUTTON -->
-<section class="section" aria-label="Demo video">
-  <div class="video-cta">
-    <a class="btn-play"
-       href="https://www.youtube.com/watch?v=wSyVJ7xkt0Q"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Watch the demo video on YouTube">
-      <span class="icon-ring" aria-hidden="true">
-        <span class="icon-play"></span>
-      </span>
-      <span class="btn-label">Watch Demo</span>
-    </a>
-  </div>
-</section>
+  <!-- Video button -->
+  <section class="section" aria-label="Demo video">
+    <div class="video-cta">
+      <a class="btn-play"
+         href="https://www.youtube.com/watch?v=wSyVJ7xkt0Q"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Watch the demo video on YouTube">
+        <span class="icon-ring" aria-hidden="true">
+          <span class="icon-play"></span>
+        </span>
+        <span class="btn-label">Watch Demo</span>
+      </a>
+    </div>
+  </section>
 
-
-    <!-- BOTTOM GALLERY (keeps original aspect ratios) -->
-    <section class="section" aria-label="Gallery">
-  <h3 class="title">Gallery</h3>
-
-  <!-- Justified (Flickr-style) gallery -->
-  <div class="jg" id="jg">
-    {% for im in p.images %}
-      <figure class="jg-item">
-        <a href="{{ url_for('static', filename='img/' ~ im.src) }}"
-           class="jg-link wg-link"  data-index="{{ loop.index0 }}">
-          <img draggable="false" loading="lazy"
-               src="{{ url_for('static', filename='img/' ~ im.src) }}"
-               alt="{{ im.alt or p.title }}">
-        </a>
-        {% if im.cap %}<figcaption class="jg-cap">{{ im.cap }}</figcaption>{% endif %}
-      </figure>
-    {% endfor %}
-  </div>
-</section>
+  <!-- Gallery -->
+  <section class="section" aria-label="Gallery">
+    <h3 class="title">Gallery</h3>
+    <div class="jg" id="jg">
+      {% for im in p.images %}
+        <figure class="jg-item">
+          <a href="{{ url_for('static', filename='img/' ~ im.src) }}" class="jg-link wg-link" data-index="{{ loop.index0 }}">
+            <img loading="lazy" src="{{ url_for('static', filename='img/' ~ im.src) }}" alt="{{ im.alt or p.title }}">
+          </a>
+          {% if im.cap %}<figcaption class="jg-cap">{{ im.cap }}</figcaption>{% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+  </section>
 
 {% elif p.slug == 'fidget-spinner' %}
   <!-- ===== FIDGET SPINNER LAYOUT ===== -->
