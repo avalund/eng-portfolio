@@ -238,10 +238,15 @@ footer {
    Responsive tweaks
 ======================== */
 @media (max-width: 640px) {
-  header { flex-direction: column; align-items: flex-start; gap: 6px; }
+  header {
+    flex-direction: row;       /* was column */
+    align-items: center;       /* was flex-start */
+    gap: 8px;                  /* a tiny bit more breathing room */
+  }
   .nav--capsule { gap: 12px; }
   .nav-link { font-size: 14px; }
 }
+
 
 /* — Revert to white theme — */
 :root {
