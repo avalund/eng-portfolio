@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VR Haptic Glove — Ava Lund</title>
+  <link rel="stylesheet" href="./static/styles.css">
+  <style>
+    .cols .card:hover {
+  transform: none !important;
+  box-shadow: var(--shadow) !important;
+}
+    /* page-local tweaks */
+    .section { margin-top: 28px; }
+    .lead { font-size: clamp(16px, 2.2vw, 18px); color: var(--fg); }
+    .cols { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 900px) { .cols { grid-template-columns: 2fr 1fr; } }
+    .list { margin: 0; padding-left: 18px; }
+    .specs dt { font-weight: 600; }
+    .specs dd { margin: 0 0 10px; color: var(--muted); }
+    /* centered single image */
+    .centerpiece {
+      max-width: min(920px, 92vw);
+      margin: 22px auto 8px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+    .centerpiece img { width: 100%; height: auto; display: block; object-fit: contain; }
+/* Tighter spacing for the top media box */
+.section--tight { margin-top: 18px; }
+
+/* Make the overview/specs row equal width on desktop */
+@media (min-width: 900px) {
+  .cols.cols--equal { grid-template-columns: 1fr 1fr; }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <a class="brand-link" href="index.html" style="text-decoration:none;color:inherit">Ava Lund</a>
+      </div>
+      <nav aria-label="Primary" class="nav--capsule">
+        <div class="nav-item">
+          <a class="nav-link" href="index.html" aria-haspopup="true" aria-expanded="false">
+            Projects <span class="chev" aria-hidden="true">▾</span>
+          </a>
+          <div class="dropdown" role="menu" aria-label="Projects">
+            
+              <a class="drop-link" href="/project/fidget-spinner" role="menuitem">
+                Precision Fidget Spinner
+              </a>
+            
+              <a class="drop-link" href="/project/haptic-glove" role="menuitem">
+                VR Haptic Glove
+              </a>
+            
+              <a class="drop-link" href="/project/cat-speaker" role="menuitem">
+                Bluetooth Speaker (Cat)
+              </a>
+            
+              <a class="drop-link" href="/project/dispensing-aid" role="menuitem">
+                Material Dispensing Aid
+              </a>
+            
+              <a class="drop-link" href="/project/other-projects" role="menuitem">
+                Other Projects
+              </a>
+            
+          </div>
+        </div>
+        <a class="nav-link" href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="proj">
+      <div class="kicker">Project</div>
+      <h1 id="proj">VR Haptic Glove</h1>
+      <p class="sub">Lightweight glove: flex sensing + vibro feedback for convincing touch cues.</p>
+    
+    </section>
+
+   
+  <!-- ===== VR HAPTIC GLOVE ===== -->
+
+  <!-- Overview + Specs -->
+  <section class="section">
+    <div class="cols cols--equal">
+      <article class="card no-lift">
+        <div class="content">
+          <h3 class="title">Overview</h3>
+          <p class="lead">
+  Haptic glove with flex-sensor finger tracking and tuned vibrotactile feedback for natural VR touch.
+</p>
+<p class="desc">
+ChatGPT said:
+
+Flex sensors on thumb/index/middle drive coin vibromotors with an exponential curve for nuanced touch. Arduino maps bends to haptics; evolved from breadboard to a soldered, wearable harness.</p>
+        </div>
+      </article>
+
+      <div class="card no-lift">
+        <div class="content">
+          <h3 class="title">Parts & Specs</h3>
+          <dl class="specs">
+            <dt>Sensing</dt>
+            <dd>Flex sensors on each finger to capture bend and grasp pose</dd>
+
+            <dt>Feedback</dt>
+            <dd>Vibration motors driven with an exponential intensity curve to mimic touch/hold in VR</dd>
+
+            <dt>Control</dt>
+            <dd>Arduino microcontroller maps sensor input to haptics in real time</dd>
+
+            <dt>Build</dt>
+            <dd>Prototyped on a breadboard, then soldered into a compact harness for durability</dd>
+          </dl>
+        </div>
+      </div>
+    </div> <!-- closes .cols -->
+  </section>
+
+  <!-- Centered cover image -->
+  <figure class="centerpiece" aria-label="Main photo">
+    <img src="./static/img/haptic-glove/01-haptic-glove.png" alt="VR Haptic Glove — main image">
+  </figure>
+
+  <!-- Single Gallery -->
+  <section class="section" aria-label="Gallery">
+    <h3 class="title">Gallery</h3>
+    <div class="jg" id="jg">
+      
+        <figure class="jg-item">
+          <a href="./static/img/haptic-glove/02-motors.png"
+             class="jg-link wg-link" data-index="0">
+            <img loading="lazy"
+                 src="./static/img/haptic-glove/02-motors.png"
+                 alt="Motor layout">
+          </a>
+          
+        </figure>
+      
+        <figure class="jg-item">
+          <a href="./static/img/haptic-glove/03-vr-hand.png"
+             class="jg-link wg-link" data-index="1">
+            <img loading="lazy"
+                 src="./static/img/haptic-glove/03-vr-hand.png"
+                 alt="VR hand view">
+          </a>
+          
+        </figure>
+      
+        <figure class="jg-item">
+          <a href="./static/img/haptic-glove/04-breadboard.jpeg"
+             class="jg-link wg-link" data-index="2">
+            <img loading="lazy"
+                 src="./static/img/haptic-glove/04-breadboard.jpeg"
+                 alt="Breadboard">
+          </a>
+          
+        </figure>
+      
+        <figure class="jg-item">
+          <a href="./static/img/haptic-glove/05-bottom-sketch.jpeg"
+             class="jg-link wg-link" data-index="3">
+            <img loading="lazy"
+                 src="./static/img/haptic-glove/05-bottom-sketch.jpeg"
+                 alt="Palm sketch">
+          </a>
+          
+        </figure>
+      
+        <figure class="jg-item">
+          <a href="./static/img/haptic-glove/06-top-sketch.jpeg"
+             class="jg-link wg-link" data-index="4">
+            <img loading="lazy"
+                 src="./static/img/haptic-glove/06-top-sketch.jpeg"
+                 alt="Top sketch">
+          </a>
+          
+        </figure>
+      
+        <figure class="jg-item">
+          <a href="./static/img/haptic-glove/07-bom.png"
+             class="jg-link wg-link" data-index="5">
+            <img loading="lazy"
+                 src="./static/img/haptic-glove/07-bom.png"
+                 alt="BOM">
+          </a>
+          
+        </figure>
+      
+    </div>
+  </section>
+
+
+
+
+
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lb" role="dialog" aria-modal="true">
+      <div class="lightbox__inner">
+        <button class="iconbtn" id="lbClose" aria-label="Close">✕</button>
+        <img class="lightbox__img" id="lbImg" alt="">
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <span>© <span id="y"></span> Ava Lund</span>
+      <span><a class="link" href="index.html">← Back to Projects</a></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Minimal lightbox for the bottom gallery
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
+    document.querySelectorAll('.wg-link').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        lbImg.src = a.href;
+        lb.classList.add('open');
+      });
+    });
+    function closeLb(){ lb.classList.remove('open'); lbImg.removeAttribute('src'); }
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', e=>{ if(e.target===lb) closeLb(); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLb(); });
+  </script>
+  <script>
+/* Multi-container Justified Gallery: works for .jg (bottom) AND #jg-side */
+(function() {
+  const TARGETS = [
+    { w: 980, h: 250 },  // desktop
+    { w: 660, h: 190 },  // tablet
+    { w:   0, h: 140 }   // mobile
+  ];
+  const JUSTIFY_LAST_ROW = true;
+
+  document.querySelectorAll('.jg').forEach(container => {
+    const figures = Array.from(container.querySelectorAll('.jg-item'));
+    const imgs = figures.map(f => f.querySelector('img'));
+
+    Promise.all(imgs.map(img => new Promise(res => {
+      if (img.complete && img.naturalWidth) return res();
+      img.addEventListener('load', res, { once: true });
+      img.addEventListener('error', res, { once: true });
+    }))).then(() => layout(container, figures));
+
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => layout(container, figures), 120);
+    });
+  });
+
+  function targetH(w) {
+    for (const t of TARGETS) if (w >= t.w) return t.h;
+    return 160;
+  }
+
+  function layout(container, figures) {
+    container.querySelectorAll('.jg-row').forEach(r => r.remove());
+
+    const cw = container.clientWidth;
+    const gapVar = getComputedStyle(container).getPropertyValue('--jg-gap').trim();
+    const GAP = parseInt(gapVar || '12', 10);
+    const H = targetH(cw);
+
+    figures.forEach(f => {
+      const a = f.querySelector('.jg-link');
+      a.style.width = a.style.height = '';
+      f.style.width = '';
+    });
+
+    let row = [], sumAR = 0;
+
+    function flush(isLast) {
+      if (!row.length) return;
+      const rowEl = document.createElement('div');
+      rowEl.className = 'jg-row' + (isLast ? ' is-last' : '');
+
+      const totalAtH = row.reduce((s, r) => s + (r.ar * H), 0);
+      const gaps = GAP * (row.length - 1);
+      let scale = (cw - gaps) / totalAtH;
+      if (isLast && !JUSTIFY_LAST_ROW) scale = 1;
+
+      row.forEach(r => {
+        const w = Math.round(r.ar * H * scale);
+        const h = Math.round(H * scale);
+        const fig = r.fig;
+        const link = fig.querySelector('.jg-link');
+        fig.style.width = w + 'px';
+        link.style.width = w + 'px';
+        link.style.height = h + 'px';
+        rowEl.appendChild(fig);
+      });
+
+      container.appendChild(rowEl);
+      row = []; sumAR = 0;
+    }
+
+    figures.forEach(fig => {
+      const img = fig.querySelector('img');
+      const ar = (img.naturalWidth && img.naturalHeight) ? (img.naturalWidth / img.naturalHeight) : 1.6;
+      row.push({ fig, ar });
+      sumAR += ar;
+      const predicted = sumAR * H + GAP * (row.length - 1);
+      if (predicted >= cw) flush(false);
+    });
+
+    flush(true);
+  }
+})();
+</script>
+
+
+</body>
+</html>

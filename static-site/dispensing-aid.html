@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Material Dispensing Aid — Ava Lund</title>
+  <link rel="stylesheet" href="./static/styles.css">
+  <style>
+    .cols .card:hover {
+  transform: none !important;
+  box-shadow: var(--shadow) !important;
+}
+    /* page-local tweaks */
+    .section { margin-top: 28px; }
+    .lead { font-size: clamp(16px, 2.2vw, 18px); color: var(--fg); }
+    .cols { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 900px) { .cols { grid-template-columns: 2fr 1fr; } }
+    .list { margin: 0; padding-left: 18px; }
+    .specs dt { font-weight: 600; }
+    .specs dd { margin: 0 0 10px; color: var(--muted); }
+    /* centered single image */
+    .centerpiece {
+      max-width: min(920px, 92vw);
+      margin: 22px auto 8px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+    .centerpiece img { width: 100%; height: auto; display: block; object-fit: contain; }
+/* Tighter spacing for the top media box */
+.section--tight { margin-top: 18px; }
+
+/* Make the overview/specs row equal width on desktop */
+@media (min-width: 900px) {
+  .cols.cols--equal { grid-template-columns: 1fr 1fr; }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <a class="brand-link" href="index.html" style="text-decoration:none;color:inherit">Ava Lund</a>
+      </div>
+      <nav aria-label="Primary" class="nav--capsule">
+        <div class="nav-item">
+          <a class="nav-link" href="index.html" aria-haspopup="true" aria-expanded="false">
+            Projects <span class="chev" aria-hidden="true">▾</span>
+          </a>
+          <div class="dropdown" role="menu" aria-label="Projects">
+            
+              <a class="drop-link" href="/project/fidget-spinner" role="menuitem">
+                Precision Fidget Spinner
+              </a>
+            
+              <a class="drop-link" href="/project/haptic-glove" role="menuitem">
+                VR Haptic Glove
+              </a>
+            
+              <a class="drop-link" href="/project/cat-speaker" role="menuitem">
+                Bluetooth Speaker (Cat)
+              </a>
+            
+              <a class="drop-link" href="/project/dispensing-aid" role="menuitem">
+                Material Dispensing Aid
+              </a>
+            
+              <a class="drop-link" href="/project/other-projects" role="menuitem">
+                Other Projects
+              </a>
+            
+          </div>
+        </div>
+        <a class="nav-link" href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="proj">
+      <div class="kicker">Project</div>
+      <h1 id="proj">Material Dispensing Aid</h1>
+      <p class="sub">Ergonomic tool for precise adhesive dispensing; rapid prototypes + test rigs.</p>
+    
+    </section>
+
+   
+  <!-- ===== MATERIAL DISPENSING AID ===== -->
+
+  <!-- Overview + Specs -->
+  <section class="section">
+    <div class="cols cols--equal">
+      <article class="card no-lift">
+        <div class="content">
+          <h3 class="title">Overview</h3>
+          <p class="lead">
+  Adjustable shop aid that clamps to a lab scale to securely hold various packs and rods during weighing and setup.
+          </p>
+          <p class="desc">
+            Designed to fit multiple scale geometries and to disassemble for cleaning with acetone. 3D printed in polypropylene for chemical compatibility and durability.
+          </p>
+        </div>
+      </article>
+  </section>
+
+  <!-- Centered cover image -->
+  <figure class="centerpiece" aria-label="Main photo">
+    <img src="./static/img/dispensing-aid/01-model.png" alt="Material Dispensing Aid — main image">
+  </figure>
+
+  <!-- Bottom gallery (auto-scanned; cover is skipped) -->
+  <section class="section" aria-label="Gallery">
+    <h3 class="title">Gallery</h3>
+    <div class="jg" id="jg-dispense">
+      
+        <figure class="jg-item">
+          <a href="./static/img/dispensing-aid/02-model.png"
+             class="jg-link wg-link" data-index="0">
+            <img loading="lazy"
+                 src="./static/img/dispensing-aid/02-model.png"
+                 alt="02 Model">
+          </a>
+          
+        </figure>
+      
+        <figure class="jg-item">
+          <a href="./static/img/dispensing-aid/03-model.png"
+             class="jg-link wg-link" data-index="1">
+            <img loading="lazy"
+                 src="./static/img/dispensing-aid/03-model.png"
+                 alt="03 Model">
+          </a>
+          
+        </figure>
+      
+        <figure class="jg-item">
+          <a href="./static/img/dispensing-aid/04-model.png"
+             class="jg-link wg-link" data-index="2">
+            <img loading="lazy"
+                 src="./static/img/dispensing-aid/04-model.png"
+                 alt="04 Model">
+          </a>
+          
+        </figure>
+      
+    </div>
+  </section>
+
+
+
+
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lb" role="dialog" aria-modal="true">
+      <div class="lightbox__inner">
+        <button class="iconbtn" id="lbClose" aria-label="Close">✕</button>
+        <img class="lightbox__img" id="lbImg" alt="">
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <span>© <span id="y"></span> Ava Lund</span>
+      <span><a class="link" href="index.html">← Back to Projects</a></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Minimal lightbox for the bottom gallery
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
+    document.querySelectorAll('.wg-link').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        lbImg.src = a.href;
+        lb.classList.add('open');
+      });
+    });
+    function closeLb(){ lb.classList.remove('open'); lbImg.removeAttribute('src'); }
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', e=>{ if(e.target===lb) closeLb(); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLb(); });
+  </script>
+  <script>
+/* Multi-container Justified Gallery: works for .jg (bottom) AND #jg-side */
+(function() {
+  const TARGETS = [
+    { w: 980, h: 250 },  // desktop
+    { w: 660, h: 190 },  // tablet
+    { w:   0, h: 140 }   // mobile
+  ];
+  const JUSTIFY_LAST_ROW = true;
+
+  document.querySelectorAll('.jg').forEach(container => {
+    const figures = Array.from(container.querySelectorAll('.jg-item'));
+    const imgs = figures.map(f => f.querySelector('img'));
+
+    Promise.all(imgs.map(img => new Promise(res => {
+      if (img.complete && img.naturalWidth) return res();
+      img.addEventListener('load', res, { once: true });
+      img.addEventListener('error', res, { once: true });
+    }))).then(() => layout(container, figures));
+
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => layout(container, figures), 120);
+    });
+  });
+
+  function targetH(w) {
+    for (const t of TARGETS) if (w >= t.w) return t.h;
+    return 160;
+  }
+
+  function layout(container, figures) {
+    container.querySelectorAll('.jg-row').forEach(r => r.remove());
+
+    const cw = container.clientWidth;
+    const gapVar = getComputedStyle(container).getPropertyValue('--jg-gap').trim();
+    const GAP = parseInt(gapVar || '12', 10);
+    const H = targetH(cw);
+
+    figures.forEach(f => {
+      const a = f.querySelector('.jg-link');
+      a.style.width = a.style.height = '';
+      f.style.width = '';
+    });
+
+    let row = [], sumAR = 0;
+
+    function flush(isLast) {
+      if (!row.length) return;
+      const rowEl = document.createElement('div');
+      rowEl.className = 'jg-row' + (isLast ? ' is-last' : '');
+
+      const totalAtH = row.reduce((s, r) => s + (r.ar * H), 0);
+      const gaps = GAP * (row.length - 1);
+      let scale = (cw - gaps) / totalAtH;
+      if (isLast && !JUSTIFY_LAST_ROW) scale = 1;
+
+      row.forEach(r => {
+        const w = Math.round(r.ar * H * scale);
+        const h = Math.round(H * scale);
+        const fig = r.fig;
+        const link = fig.querySelector('.jg-link');
+        fig.style.width = w + 'px';
+        link.style.width = w + 'px';
+        link.style.height = h + 'px';
+        rowEl.appendChild(fig);
+      });
+
+      container.appendChild(rowEl);
+      row = []; sumAR = 0;
+    }
+
+    figures.forEach(fig => {
+      const img = fig.querySelector('img');
+      const ar = (img.naturalWidth && img.naturalHeight) ? (img.naturalWidth / img.naturalHeight) : 1.6;
+      row.push({ fig, ar });
+      sumAR += ar;
+      const predicted = sumAR * H + GAP * (row.length - 1);
+      if (predicted >= cw) flush(false);
+    });
+
+    flush(true);
+  }
+})();
+</script>
+
+
+</body>
+</html>
