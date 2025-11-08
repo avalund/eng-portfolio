@@ -216,25 +216,26 @@ ChatGPT said:
 Flex sensors on thumb/index/middle drive coin vibromotors with an exponential curve for nuanced touch. Arduino maps bends to haptics; evolved from breadboard to a soldered, wearable harness.</p>
         </div>
       </article>
-<div class="card no-lift">
-  <div class="content">
-    <h3 class="title">Parts & Specs</h3>
-    <dl class="specs">
-      <dt>Sensing</dt>
-      <dd>Flex sensors on each finger to capture bend and grasp pose</dd>
 
-      <dt>Feedback</dt>
-      <dd>Vibration motors driven with an exponential intensity curve to mimic touch/hold in VR</dd>
+      <div class="card no-lift">
+        <div class="content">
+          <h3 class="title">Parts & Specs</h3>
+          <dl class="specs">
+            <dt>Sensing</dt>
+            <dd>Flex sensors on each finger to capture bend and grasp pose</dd>
 
-      <dt>Control</dt>
-      <dd>Arduino microcontroller maps sensor input to haptics in real time</dd>
+            <dt>Feedback</dt>
+            <dd>Vibration motors driven with an exponential intensity curve to mimic touch/hold in VR</dd>
 
-      <dt>Build</dt>
-      <dd>Prototyped on a breadboard, then soldered into a compact harness for durability</dd>
-    </dl>
-  </div>
-</div>
+            <dt>Control</dt>
+            <dd>Arduino microcontroller maps sensor input to haptics in real time</dd>
 
+            <dt>Build</dt>
+            <dd>Prototyped on a breadboard, then soldered into a compact harness for durability</dd>
+          </dl>
+        </div>
+      </div>
+    </div> <!-- closes .cols -->
   </section>
 
   <!-- Centered cover image -->
@@ -242,40 +243,7 @@ Flex sensors on thumb/index/middle drive coin vibromotors with an exponential cu
     <img src="{{ url_for('static', filename='img/' ~ p.image) }}" alt="{{ p.title }} — main image">
   </figure>
 
-  <!-- Bottom gallery -->
-  <section class="section" aria-label="Gallery">
-    <h3 class="title">Gallery</h3>
-    <div class="jg" id="jg">
-      {% for im in p.images %}
-        <figure class="jg-item">
-          <a href="{{ url_for('static', filename='img/' ~ im.src) }}"
-             class="jg-link wg-link" data-index="{{ loop.index0 }}">
-            <img loading="lazy"
-                 src="{{ url_for('static', filename='img/' ~ im.src) }}"
-                 alt="{{ im.alt or p.title }}">
-          </a>
-          {% if im.cap %}<figcaption class="jg-cap">{{ im.cap }}</figcaption>{% endif %}
-        </figure>
-      {% endfor %}
-    </div>
-  </section>
-
-
-      <div class="card no-lift">
-        <div class="content">
-          <h3 class="title">Parts & Specs</h3>
-          <dl class="specs">
-            <dt>Actuation</dt><dd>Hobby servos (metal-gear)</dd>
-            <dt>Structure</dt><dd>Printed linkages + hardware</dd>
-            <dt>Control</dt><dd>Microcontroller + timing profiles</dd>
-            <dt>Focus</dt><dd>Linkage kinematics, step stability</dd>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bottom gallery (full set) -->
+  <!-- Single Gallery -->
   <section class="section" aria-label="Gallery">
     <h3 class="title">Gallery</h3>
     <div class="jg" id="jg">
@@ -293,6 +261,8 @@ Flex sensors on thumb/index/middle drive coin vibromotors with an exponential cu
     </div>
   </section>
 {% elif p.slug == 'dispensing-aid' %}
+
+{% elif p.slug == 'dispensing-aid' %}
   <!-- ===== MATERIAL DISPENSING AID ===== -->
 
   <!-- Overview + Specs -->
@@ -309,19 +279,6 @@ Flex sensors on thumb/index/middle drive coin vibromotors with an exponential cu
           </p>
         </div>
       </article>
-<div class="card no-lift">
-  <div class="content">
-    <h3 class="title">Parts & Specs</h3>
-    <dl class="specs">
-      <dt>Clamp</dt><dd>Scale-mounted, clamps jaws for a solid lock to the deck</dd>
-      <dt>Holder</dt><dd>Cradle supports packs and rods</dd>
-      <dt>Adjustability</dt><dd>Slot-and-fastener layout fits multiple scale widths</dd>
-      <dt>Material & Cleaning</dt><dd>Polypropylene (PP) for chemical compatibility; fully disassembles for acetone cleaning</dd>
-    </dl>
-  </div>
-</div>
-
-
   </section>
 
   <!-- Centered cover image -->
@@ -346,9 +303,6 @@ Flex sensors on thumb/index/middle drive coin vibromotors with an exponential cu
       {% endfor %}
     </div>
   </section>
-
-
-  
 {% elif p.slug == 'other-projects' %}
   <!-- ===== OTHER PROJECTS ===== -->
 <section class="section op-section" aria-label="Woodworking">
