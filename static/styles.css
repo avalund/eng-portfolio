@@ -1114,3 +1114,28 @@ footer { border-top: none; }
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/* === Adjust Others page boxes for mobile === */
+@media (max-width: 720px) {
+  .op-grid,
+  .op-pairs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px; /* smaller gap between boxes */
+    padding: 0 8px; /* reduce side padding */
+    max-width: 100%;
+  }
+
+  .op-card,
+  .op-box {
+    width: 100%;
+    min-width: unset;
+    margin: 0;
+  }
+
+  .op-card img,
+  .op-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
