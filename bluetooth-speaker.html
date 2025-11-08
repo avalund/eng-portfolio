@@ -44,42 +44,46 @@
 <body>
   <div class="container">
     <!-- Header -->
-    <header>
-      <div class="brand">
-        <a class="brand-link" href="index.html" style="text-decoration:none;color:inherit">Ava Lund</a>
-      </div>
-      <nav aria-label="Primary" class="nav--capsule">
-        <div class="nav-item">
-          <a class="nav-link" href="index.html" aria-haspopup="true" aria-expanded="false">
-            Projects <span class="chev" aria-hidden="true">▾</span>
+<header>
+  <div class="brand">
+    <a class="brand-link" href="index.html" style="text-decoration:none;color:inherit">Ava Lund</a>
+  </div>
+
+  <nav aria-label="Primary" class="nav--capsule">
+    <!-- Projects with dropdown -->
+    <div class="nav-item">
+      <a class="nav-link" href="index.html" aria-haspopup="true" aria-expanded="false">
+        Projects <span class="chev" aria-hidden="true">▾</span>
+      </a>
+      <div class="dropdown" role="menu" aria-label="Projects">
+        
+          <a class="drop-link" href="/fidget-spinner.html" role="menuitem">
+            Precision Fidget Spinner
           </a>
-          <div class="dropdown" role="menu" aria-label="Projects">
-            
-              <a class="drop-link" href="/project/fidget-spinner" role="menuitem">
-                Precision Fidget Spinner
-              </a>
-            
-              <a class="drop-link" href="/project/haptic-glove" role="menuitem">
-                VR Haptic Glove
-              </a>
-            
-              <a class="drop-link" href="/project/cat-speaker" role="menuitem">
-                Bluetooth Speaker (Cat)
-              </a>
-            
-              <a class="drop-link" href="/project/dispensing-aid" role="menuitem">
-                Material Dispensing Aid
-              </a>
-            
-              <a class="drop-link" href="/project/other-projects" role="menuitem">
-                Other Projects
-              </a>
-            
-          </div>
-        </div>
-        <a class="nav-link" href="/contact">Contact</a>
-      </nav>
-    </header>
+        
+          <a class="drop-link" href="/haptic-glove.html" role="menuitem">
+            VR Haptic Glove
+          </a>
+        
+          <a class="drop-link" href="/bluetooth-speaker.html" role="menuitem">
+            Bluetooth Speaker (Cat)
+          </a>
+        
+          <a class="drop-link" href="/dispensing-aid.html" role="menuitem">
+            Material Dispensing Aid
+          </a>
+        
+          <a class="drop-link" href="/other-projects.html" role="menuitem">
+            Other Projects
+          </a>
+        
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <a class="nav-link" href="/contact.html">Contact</a>
+  </nav>
+</header>
 
     <!-- HERO -->
     <section class="hero" aria-labelledby="proj">
