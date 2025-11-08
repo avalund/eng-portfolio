@@ -1114,28 +1114,10 @@ footer { border-top: none; }
     grid-template-columns: repeat(3, 1fr);
   }
 }
-/* === Adjust Others page boxes for mobile === */
-@media (max-width: 720px) {
-  .op-grid,
-  .op-pairs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px; /* smaller gap between boxes */
-    padding: 0 8px; /* reduce side padding */
-    max-width: 100%;
-  }
-
-  .op-card,
-  .op-box {
-    width: 100%;
-    min-width: unset;
-    margin: 0;
-  }
-
-  .op-card img,
-  .op-box img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+/* === Final fix: make "Other Projects" grids use full container width === */
+.op-section[aria-label="Woodworking"] .op-pairs,
+.op-section[aria-label="Motorcycles"] .op-grid,
+.op-section[aria-label="Art"] .op-grid {
+  width: 100% !important;
+  max-width: 100% !important;  /* stop clamping them to 82vw etc. */
 }
